@@ -41,19 +41,19 @@
         </div>
         <p class="mt-3"><span class="el_label el_label__optional">任意</span>電話番号</p>
         <div>
-            <input class="form-control w-100 mt-1" name="bangou">
+            <input class="form-control w-100 mt-1" name="tel">
         </div>
         <p class="mt-3"><span class="el_label el_label__required">必須</span>第1希望日</p>
         <div>
-            <input type="date"  class="form-control w-100 mt-1" name="shushoujou" required>
+            <input type="date"  class="form-control w-100 mt-1" name="preferred-date-01" required>
         </div>
         <p class="mt-3"><span class="el_label el_label__optional">任意</span>第2希望日</p>
         <div>
-            <input type="date"  class="form-control w-100 mt-1" name="keika">
+            <input type="date"  class="form-control w-100 mt-1" name="preferred-date-02">
         </div>
         <p class="mt-3"><span class="el_label el_label__optional">任意</span>第3希望日</p>
         <div>
-            <input type="date" class="form-control w-100 mt-1" name="hatunetu">
+            <input type="date" class="form-control w-100 mt-1" name="preferred-date-03">
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -97,11 +97,11 @@
         $(function () {
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const keika  = $('input[name="keika"]').val();
-                const hatunetu = $('input[name="hatunetu"]').val();
-                const msg = `${name}\n${bangou}\n${shushoujou}\n${keika}\n${hatunetu}`;
+                const tel = $('input[name="tel"]').val();
+                const preferred-date-01  = $('input[name="preferred-date-01"]').val();
+                const preferred-date-02  = $('input[name="preferred-date-02"]').val();
+                const preferred-date-03 = $('input[name="preferred-date-03"]').val();
+                const msg = `${name}\n${tel}\n${preferred-date-01}\n${preferred-date-02}\n${preferred-date-03}`;
                 sendText(msg);
                 return false;
             });
