@@ -37,11 +37,11 @@
     <form class="w-75 mx-auto">
         <p class="mt-3"><span class="el_label el_label__required">必須</span>お名前</p>
         <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="氏名" required>
+            <input class="form-control w-100 mt-1" name="name01" placeholder="氏名" required>
         </div>
         <p class="mt-3"><span class="el_label el_label__optional">任意</span>電話番号</p>
         <div>
-            <input type="tel" class="form-control w-100 mt-1" name="tel" placeholder="090-xxxx-xxxx">
+            <input type="tel" class="form-control w-100 mt-1" name="tel01" placeholder="090-xxxx-xxxx">
         </div>
         <p class="mt-3"><span class="el_label el_label__required">必須</span>第1希望日</p>
         <div>
@@ -54,6 +54,10 @@
         <p class="mt-3"><span class="el_label el_label__optional">任意</span>第3希望日</p>
         <div>
             <input type="date" class="form-control w-100 mt-1" placeholder="希望日を選択ください" name="date03">
+        </div>
+        <div>
+        <p class="mt-3"><span class="el_label el_label__optional">任意</span>体験トレーニングに関してのご質問</p>
+        <textarea cols="40" rows="10" class="form-control w-100 mt-1" placeholder="「希望の時間帯」など、体験トレーニングに関するご相談・ご質問がございましたら、お気軽にお問い合わせください。" name="message01"></textarea>
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -96,12 +100,13 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const tel = $('input[name="tel"]').val();
+                const name01    = $('input[name="name01"]').val();
+                const tel01 = $('input[name="tel01"]').val();
                 const date01  = $('input[name="date01"]').val();
                 const date02  = $('input[name="date02"]').val();
                 const date03 = $('input[name="date03"]').val();
-                const msg = `■体験申込内容\n${name}\n${tel}\n${date01}\n${date02}\n${date03}`;
+                const massage01 = $('input[name="massage01"]').val();
+                const msg = `■体験申込内容\n${name}\n${tel}\n${date01}\n${date02}\n${date03}\n${massage01}`;
                 sendText(msg);
                 return false;
             });
